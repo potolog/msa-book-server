@@ -18,5 +18,8 @@ eureka:
     healthcheck:
       enabled: true
     instance:
-      statusPageUrlPath: ${server.servletPath}info
-      healthCheckUrlPath: ${server.servletPath}health
+#     statusPageUrlPath: ${server.servletPath}info
+#     healthCheckUrlPath: ${server.servletPath}health
+      statusPageUrlPath: http://${eureka.server.host}/info
+      healthCheckUrlPath: http://${eureka.server.host}/health
+      homePageUrl: http://${eureka.server.hostname}/
