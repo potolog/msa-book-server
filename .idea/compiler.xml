@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="author" />
         <module name="book" />
         <module name="eureka-registry-server" />
         <module name="zuul-proxy-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="author" target="1.8" />
       <module name="book" target="1.8" />
       <module name="eureka-registry-server" target="1.8" />
       <module name="msa-root" target="1.5" />

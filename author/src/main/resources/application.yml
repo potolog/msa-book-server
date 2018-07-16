@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: author
+
+server:
+  port: 8092
+  servletPath: /
+
+eureka:
+  server:
+    host: localhost
+    port: 8761
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.server.host}:${eureka.server.port}/eureka/
+    healthcheck:
+      enabled: true
+    instance:
+#     statusPageUrlPath: ${server.servletPath}info
+#     healthCheckUrlPath: ${server.servletPath}health
+      statusPageUrlPath: http://${eureka.server.host}/info
+      healthCheckUrlPath: http://${eureka.server.host}/health
+      homePageUrl: http://${eureka.server.hostname}/

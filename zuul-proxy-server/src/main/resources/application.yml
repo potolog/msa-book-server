@@ -15,6 +15,10 @@ zuul:
       path: /books/**
       serviceId: book
       stripPrefix: false
+    authors:
+      path: /authors/**
+      serviceId: author
+      stripPrefix: false
 
 eureka:
   server:

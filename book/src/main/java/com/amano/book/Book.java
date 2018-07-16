@@ -40,7 +40,7 @@ public class Book {
 
 //    @Column(columnDefinition = "등록일시")
     @Column
-    private Date regist_date;
+    private Date regist_datetime;
 
 
     public Long getId() {
@@ -99,17 +99,17 @@ public class Book {
         this.price = price;
     }
 
-    public Date getRegist_date() {
-        return regist_date;
+    public Date getRegist_datetime() {
+        return regist_datetime;
     }
 
-    public void setRegist_date(Date regist_date) {
-        this.regist_date = regist_date;
+    public void setRegist_datetime(Date regist_datetime) {
+        this.regist_datetime = regist_datetime;
     }
 
     @PrePersist // Auto created date when it's created
     public void prePersist() {
-        regist_date = new Date();
+        regist_datetime = new Date();
     }
 
     @Override
@@ -122,7 +122,7 @@ public class Book {
                 ", book_classification='" + book_classification + '\'' +
                 ", publish_date=" + publish_date +
                 ", price=" + price +
-                ", regist_date=" + regist_date +
+                ", regist_datetime=" + regist_datetime +
                 '}';
     }
 
