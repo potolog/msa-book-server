@@ -22,6 +22,11 @@ public class BookApplication {
 		SpringApplication.run(BookApplication.class, args);
 	}
 
+	@RequestMapping("/")
+    public String index() {
+	    return "스프링 부트 액추에이터";
+    }
+
     @RequestMapping(value = "health")
     public ResponseEntity<Void> health() {
         System.out.println("BookApplication.... health - OK");

@@ -1,3 +1,9 @@
+info:
+  app:
+    name: 스프링 부트 웹 액추에이터 어플리케이션
+    description: 이 어플리케이션은 MSA 예제입니다.
+    version: 1.0.0
+
 spring:
   application:
     name: book
