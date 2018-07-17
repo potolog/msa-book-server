@@ -29,3 +29,10 @@ eureka:
       statusPageUrlPath: http://${eureka.server.host}/info
       healthCheckUrlPath: http://${eureka.server.host}/health
       homePageUrl: http://${eureka.server.hostname}/
+
+# Security
+security:
+  user:
+    name: spring
+    password: boot
+
