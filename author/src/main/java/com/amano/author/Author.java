@@ -1,6 +1,9 @@
 package com.amano.author;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -27,6 +30,9 @@ public class Author {
     // 등록일시
     @Column
     private Date regist_datetime;
+
+    @Transient
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
     public Long getId() {
         return id;
@@ -60,6 +66,7 @@ public class Author {
         this.image = image;
     }
 
+    @JsonSerialize(using = JsonDateTimeSerializer.class)
     public Date getRegist_datetime() {
         return regist_datetime;
     }
