@@ -34,9 +34,8 @@ public class Book {
     private String book_classification;
 
     // 출판일
-//    @Column(columnDefinition = "출판일")
-    @Column
-    private Date publish_date;
+    @Column(name="publish_date", columnDefinition = "출판일")
+    private Date publishdate;
 
     // 가격
 //    @Column(columnDefinition = "가격")
@@ -91,22 +90,22 @@ public class Book {
     }
 
     @JsonSerialize(using = JsonDateSerializer.class)
-    public Date getPublish_date() {
-        return publish_date;
+    public Date getPublishdate() {
+        return publishdate;
     }
 
-    public void setPublish_date(Date publish_date) {
-        this.publish_date = publish_date;
+    public void setPublishdate(Date publish_date) {
+        this.publishdate = publish_date;
     }
 
-    public void setPublish_date(String publish_date) throws ParseException {
+    public void setPublishdate(String publish_date) throws ParseException {
         Long _date = null;
         try {
             _date = Long.parseLong(publish_date);
-            this.publish_date = new Date(_date);
+            this.publishdate = new Date(_date);
             return;
         } catch (Exception ex) {}
-        this.publish_date = format.parse(publish_date);
+        this.publishdate = format.parse(publish_date);
     }
 
     public Double getPrice() {
@@ -133,7 +132,7 @@ public class Book {
 
     @JsonIgnore
     public String getPublish_dateAsShort() {
-        return format.format(publish_date);
+        return format.format(publishdate);
     }
 
     @Override
@@ -144,7 +143,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", publisher='" + publisher + '\'' +
                 ", book_classification='" + book_classification + '\'' +
-                ", publish_date=" + publish_date +
+                ", publish_date=" + publishdate +
                 ", price=" + price +
                 ", regist_datetime=" + regist_datetime +
                 '}';
