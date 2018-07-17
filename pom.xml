@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
 
     <modules>
+
+        <!-- shared-model -->
+        <module>shared-model</module>
+
         <!-- core domain -->
         <module>author</module>
         <module>book</module>
