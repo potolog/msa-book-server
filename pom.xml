@@ -10,8 +10,9 @@
 
     <modules>
         <!-- core domain -->
-        <module>book</module>
         <module>author</module>
+        <module>book</module>
+        <module>publisher</module>
 
         <!-- supportive domain -->
 

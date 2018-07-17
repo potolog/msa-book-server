@@ -11,13 +11,21 @@ zuul:
   addProxyHeaders: true
 
   routes:
+    authors:
+      path: /authors/**
+      serviceId: author
+      stripPrefix: false
     books:
       path: /books/**
       serviceId: book
       stripPrefix: false
-    authors:
-      path: /authors/**
-      serviceId: author
+    publishers:
+      path: /publishers/**
+      serviceId: publisher
+      stripPrefix: false
+    reviews:
+      path: /reviews/**
+      serviceId: review
       stripPrefix: false
 
 eureka:
