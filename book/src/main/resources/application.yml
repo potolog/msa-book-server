@@ -33,6 +33,9 @@ eureka:
 # Security
 security:
   user:
-    name: spring
-    password: boot
-
+    name: root
+    password: 1111
+  oauth2:
+    client:
+      client-id: amano
+      client-secret: amano
