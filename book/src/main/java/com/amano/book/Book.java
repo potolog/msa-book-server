@@ -1,7 +1,9 @@
 package com.amano.book;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.text.ParseException;
@@ -18,31 +20,44 @@ public class Book {
     private Long id;
 
     // 책제목
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "책제목", required = true)
     @Column(length = 100, nullable = false)
     private String title;
 
     // 저자
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "저자", required = true)
     @Column(length = 100)
     private String author;
 
     // 출판사
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "출판사", required = true)
     @Column(length = 100)
     private String publisher;
 
     // 책분류
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "책분류", required = true)
     @Column(length = 100)
     private String book_classification;
 
     // 출판일
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "출판일", required = true)
     @Column(name="publish_date", columnDefinition = "출판일")
     private Date publishdate;
 
     // 가격
-//    @Column(columnDefinition = "가격")
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "가격", required = true)
     @Column
     private Double price;
 
-//    @Column(columnDefinition = "등록일시")
+    // 등록일시
+    @JsonProperty(required = true)
+    @ApiModelProperty(notes = "등록일시", required = true)
     @Column
     private Date regist_datetime;
 
